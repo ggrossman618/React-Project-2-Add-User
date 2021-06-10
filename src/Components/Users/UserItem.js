@@ -2,10 +2,11 @@ import React from "react";
 
 function UserItem(props) {
   return (
-    <div>
-      <p>{props.username}</p>
-      <p>{props.age}</p>
-    </div>
+    <li>
+      username: {props.username}
+      age: {props.age}
+      
+    </li>
   );
 }
 

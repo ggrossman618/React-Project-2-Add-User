@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Users from "./Components/Users/Users";
+import UsersList from "./Components/Users/UsersList";
 import AddUser from "./Components/Users/AddUser.js";
 import UserItem from "./Components/Users/UserItem";
 
@@ -15,13 +15,13 @@ function App() {
         ...prevUsers,
       ];
     });
-    console.log(users.toString());
+    console.log(users);
   }
 
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
-      <Users allUsers={users} />
+      <UsersList allUsers={users} />
     </div>
   );
 }
