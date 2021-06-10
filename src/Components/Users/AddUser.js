@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function AddUser() {
+function AddUser(props) {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -18,7 +18,8 @@ function AddUser() {
       username: enteredUsername,
       age: enteredAge
     };
-    console.log(user);
+    props.onAddUser(user);
+    //console.log(user);
   }
 
   return (
