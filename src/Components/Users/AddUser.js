@@ -1,23 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 
 function AddUser() {
+  const [enteredUsername, setEnteredUsername] = useState("");
+  const [enteredAge, setEnteredAge] = useState("");
 
-  function submitHandler(){
-    
+  function nameChangeHandler(event) {
+    setEnteredUsername(event.target.value);
+  }
+
+  function ageChangeHandler(event) {
+    setEnteredAge(event.target.value);
+  }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    const user = {
+      username: enteredUsername,
+      age: enteredAge
+    };
+    console.log(user);
   }
 
   return (
     <form onSubmit={submitHandler}>
       <div>
-        <label>Username</label>
-        <input type="text" />
-      </div>
-      <div>
-        <label>Age (Years)</label>
-        <input type="number" />
-      </div>
-      <div>
-        <button type='submit'>Add User</button>
+        <div>
+          <label>Username</label>
+          <input
+            type="text"
+            value={enteredUsername}
+            onChange={nameChangeHandler}
+          />
+        </div>
+        <div>
+          <label>Age (Years)</label>
+          <input type="number" value={enteredAge} onChange={ageChangeHandler} />
+        </div>
+        <div>
+          <button type="submit">Add User</button>
+        </div>
       </div>
     </form>
   );
