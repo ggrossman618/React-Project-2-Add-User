@@ -1,11 +1,11 @@
 import React from "react";
 
 function UserItem(props) {
-  return (
+    console.log(props.username);
+    return (
     <li>
-      username: {props.username}
-      age: {props.age}
-      
+      <div>{props.username}</div>
+      <div>{props.age}</div>
     </li>
   );
 }

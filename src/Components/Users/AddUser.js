@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import UserItem from "./UserItem";
 
 function AddUser(props) {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
+
 
   function nameChangeHandler(event) {
     setEnteredUsername(event.target.value);
@@ -14,13 +16,13 @@ function AddUser(props) {
 
   function submitHandler(event) {
     event.preventDefault();
-    const user = {
-      username: enteredUsername,
-      age: enteredAge
-    };
-    props.onAddUser(user);
-    //console.log(user);
+    console.log(enteredUsername);
+    props.onAddUser(
+      <UserItem username={enteredUsername} age={enteredAge} key={Math.random().toString()} />
+    );
   }
+
+  //console.log(user);
 
   return (
     <form onSubmit={submitHandler}>
@@ -40,6 +42,7 @@ function AddUser(props) {
         <div>
           <button type="submit">Add User</button>
         </div>
+        <div></div>
       </div>
     </form>
   );
