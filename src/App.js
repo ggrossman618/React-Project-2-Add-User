@@ -12,7 +12,7 @@ function App() {
     setUsers((prevUsers) => {
       return [user, ...prevUsers];
     });
-    console.log('test');
+    console.log(user.username + "test");
   }
 
   return (

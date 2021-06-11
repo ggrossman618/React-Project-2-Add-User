@@ -16,7 +16,7 @@ function AddUser(props) {
 
   function submitHandler(event) {
     event.preventDefault();
-    console.log(enteredUsername);
+    //console.log(enteredUsername);
     props.onAddUser(
       <UserItem username={enteredUsername} age={enteredAge} key={Math.random().toString()} />
     );
